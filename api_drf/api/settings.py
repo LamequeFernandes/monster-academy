@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'usuario',
     'exercicio',
     'metas',
+    'dieta'
 ]
 
 MIDDLEWARE = [

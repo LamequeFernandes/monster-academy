@@ -19,6 +19,9 @@ class Exercicio(BaseModel):
     temp_descanso = models.IntegerField()
     nivel_dificuldade = EnumChoiceField(NivelDificuldadeEnum)
 
+    def __str__(self) -> str:
+        return self.nome
+
     class Meta:
         db_table = 'exercicio'
 
