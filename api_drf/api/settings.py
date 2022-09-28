@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'metas',
     'dieta',
     'momento_treino',
+    'treino'
 ]
 
 MIDDLEWARE = [

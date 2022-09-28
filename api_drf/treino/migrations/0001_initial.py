@@ -9,21 +9,24 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('momento_treino', '0001_initial'),
         ('usuario', '0001_initial'),
         ('core', '__first__'),
+        ('exercicio', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Meta',
+            name='Treino',
             fields=[
                 ('basemodel_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='core.basemodel')),
                 ('titulo', models.CharField(max_length=30)),
-                ('descricao', models.TextField(max_length=500)),
-                ('cpf_usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='usuario.usuario')),
+                ('cpf_autor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='usuario.usuario')),
+                ('exercicios', models.ManyToManyField(to='exercicio.exercicio')),
+                ('id_momento_treino', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='momento_treino.momentotreino')),
             ],
             options={
-                'db_table': 'meta',
+                'db_table': 'treino',
             },
             bases=('core.basemodel',),
         ),
