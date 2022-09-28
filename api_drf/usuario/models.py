@@ -2,7 +2,7 @@ from enum import Enum, unique
 import gc
 from django.db import models
 from django.core.validators import MinLengthValidator
-from enumchoicefield import ChoiceEnum, EnumChoiceField
+from enumchoicefield import EnumChoiceField
 
 
 class ObjetivosEnum(Enum):
