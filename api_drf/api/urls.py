@@ -36,11 +36,12 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('exercicio.urls')),
+    path('', include(('usuario.urls', 'usuarios'), namespace='usuarios')),
+    path('', include(('exercicio.urls', 'exercicios'), namespace='exercicios')),
 ]
 
 # swagger
 urlpatterns += [
-   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # noqa E501
-   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # noqa E501
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), 
+   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'), 
 ]
